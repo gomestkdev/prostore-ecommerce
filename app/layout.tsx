@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import {  Inter } from "next/font/google";
 import "@/styles/globals.css";
-import {APP_DESCRIPTION, APP_NAME, SERVER_URL} from "@/lib/constants";
-
+import { APP_DESCRIPTION, APP_NAME, SERVER_URL} from "@/lib/constants";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({
   subsets: ["latin"]
@@ -22,8 +22,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${inter.className} h-full antialiased`}
+      suppressHydrationWarning={true}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ThemeProvider
+          attribute={"class"}
+          defaultTheme={"light"}
+          enableSystem={true}
+          disableTransitionOnChange={true}
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

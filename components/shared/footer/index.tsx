@@ -17,5 +17,5 @@ export default async function Footer() {
                 { currentYear } | { APP_NAME }. All rights Reserved.
             </div>
         </footer>
-    )
+    );
 }
