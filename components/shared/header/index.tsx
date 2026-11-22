@@ -1,11 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ShoppingCart, UserIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { APP_NAME } from "@/lib/constants";
 import Logo from "@/assets/logo.svg";
-import ModeToggle from "@/components/shared/header/mode-toggle";
+import Menu from "@/components/shared/header/menu";
 
 export default function Header() {
     return (
@@ -25,15 +23,7 @@ export default function Header() {
                         { APP_NAME }
                     </span>
                 </div>
-                <div className="space-x-2 p-1">
-                    <ModeToggle />
-                    <Button variant="ghost" nativeButton={false} render={<Link href="/cart" />}>
-                        <ShoppingCart /> Cart
-                    </Button>
-                    <Button variant="ghost" nativeButton={false} render={<Link href="/sign-in" />}>
-                        <UserIcon /> Sign In
-                    </Button>
-                </div>
+                <Menu />
             </div>
         </header>
     );
