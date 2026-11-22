@@ -1,5 +1,6 @@
+import React from "react";
 import type { Metadata } from "next";
-import {  Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { APP_DESCRIPTION, APP_NAME, SERVER_URL} from "@/lib/constants";
 import { ThemeProvider } from "next-themes";
@@ -17,23 +18,24 @@ export const metadata: Metadata = {
   metadataBase: new URL(SERVER_URL)
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children } : Readonly<{ children: React.ReactNode; }>) {
+
   return (
-    <html
-      lang="en"
-      className={`${inter.className} h-full antialiased`}
-      suppressHydrationWarning={true}
-    >
-      <body className="min-h-full flex flex-col">
-        <ThemeProvider
-          attribute={"class"}
-          defaultTheme={"light"}
-          enableSystem={true}
-          disableTransitionOnChange={true}
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+      <html
+          lang="en"
+          className={`${inter.className} h-full antialiased`}
+          suppressHydrationWarning={true}
+      >
+        <body className="min-h-full flex flex-col">
+          <ThemeProvider
+            attribute={"class"}
+            defaultTheme={"light"}
+            enableSystem={true}
+            disableTransitionOnChange={true}
+          >
+            { children }
+          </ThemeProvider>
+        </body>
+      </html>
   );
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ShoppingCart, UserIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { APP_NAME } from "@/lib/constants";
-import Logo from "@/images/logo.svg";
+import Logo from "@/assets/logo.svg";
 import ModeToggle from "@/components/shared/header/mode-toggle";
 
 export default function Header() {
