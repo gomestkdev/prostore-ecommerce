@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { APP_NAME } from "@/lib/constants";
-import Logo from "@/assets/logo.svg";
+import Logo from "@/public/images/logo.svg";
 import Menu from "@/components/shared/header/menu";
 
 export default function Header() {

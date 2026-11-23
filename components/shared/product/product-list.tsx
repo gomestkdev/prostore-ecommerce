@@ -1,3 +1,5 @@
+import ProductCard from "@/components/shared/product/product-card";
+
 export default function ProductList({ data, title, limit }: { data: any, title?: string, limit?: number; }) {
     const limitedData = limit ? data.slice(0, limit) : data;
 
@@ -8,7 +10,7 @@ export default function ProductList({ data, title, limit }: { data: any, title?:
             </h2>
             {limitedData.length > 0 ? (
                 <div className={"grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"}>
-                    {data.map((product: any) => (<div key={product.id}>{product.name}</div>))}
+                    {data.map((product: any) => <ProductCard key={product.slug} product={product} />)}
                 </div>
             ) : (
                 <div>

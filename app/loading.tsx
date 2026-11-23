@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Loader from "@/assets/loader.gif"
+import Loader from "@/public/images/loader.gif"
 
 export default function LoadingPage() {
     return (

@@ -3,7 +3,7 @@ import { APP_NAME } from "@/lib/constants";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import Logo from "@/assets/logo.svg";
+import Logo from "@/public/images/logo.svg";
 
 export default function NotFoundPage() {
     const router = useRouter();

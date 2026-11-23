@@ -1,13 +1,11 @@
-export const instant = false;
-
-function simulatingDelay(ms: number) {
-  return new Promise(rs => setTimeout(rs, ms));
-}
+import sampleData from "@/db/sample-data";
+import ProductList from "@/components/shared/product/product-list";
 
 export default async function Homepage() {
-  await simulatingDelay(2000);
 
   return (
-      <>Prostore</>
+      <>
+        <ProductList data={sampleData.products} title={"Newest Arrivals"} limit={5} />
+      </>
   );
 }
